@@ -16,6 +16,6 @@
             <textarea name="messages" style="height: 100px;resize: none;" class="form-control" placeholder="messages" id="contact-input"></textarea>
             <label for="contact-input">Type your Message here</label>
         </div>
-        <button type="submit" class="btn btn-lg btn-primary">Send Message</button>
+        <button type="submit" class="btn btn-lg btn-primary" id="send-btn">Send Message</button>
     </form>
 </div>

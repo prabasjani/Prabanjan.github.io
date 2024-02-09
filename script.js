@@ -196,9 +196,93 @@ contactDetails.forEach(contactDetail => {
 });
 
 
+// Project cards data
+
+const projects = [
+    {
+        cardClass : "card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg",
+        cardItemClass : "d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1",
+        cardHeadingClass : "pt-5 mt-5 mb-4 display-6 lh-1 fw-bold",
+        CardHeading : "Shakya IAS Academy",
+        ulClass : "d-flex list-unstyled mt-auto",
+        imgList : "me-auto",
+        imgSrc : "profile.png",
+        imgClass : "rounded-circle border border-white",
+        linkList : "d-flex align-items-center me-3",
+        linkClass : "nav-link",
+        visit : "Visit Site",
+        visitHref : "#",
+        more : "More Details",
+        moreHref : "#"
+    },
+];
+
+// function addProject(){
+    
+    projects.forEach(project => {
+    
+    const projectCardRow = document.querySelector('#project-col');
+
+    const cardCol = document.createElement('div');
+    cardCol.className = "col";
+    projectCardRow.appendChild(cardCol);
+        
+    const card = document.createElement('div');
+    card.className = project.cardClass;
+    card.setAttribute("id","project-card");
+    cardCol.appendChild(card);
+
+        const cardItem = document.createElement('div');
+        cardItem.className = project.cardItemClass;
+        card.appendChild(cardItem);
+
+            const projectHeading = document.createElement('h3');
+            projectHeading.className = project.cardHeadingClass;
+            projectHeading.innerHTML = project.CardHeading;
+            cardItem.appendChild(projectHeading);
+
+            const projectFooter = document.createElement('ul');
+            projectFooter.className = project.ulClass;
+            cardItem.appendChild(projectFooter);
+
+                const footerimgList =document.createElement('li');
+                footerimgList.className = project.imgList;
+                projectFooter.appendChild(footerimgList);
+
+                    const devImg = document.createElement('img');
+                    devImg.className = project.imgClass;
+                    devImg.setAttribute("src",project.imgSrc);
+                    devImg.setAttribute("alt","Developer");
+                    devImg.setAttribute("width", "32");
+                    devImg.setAttribute("height","32");
+                    footerimgList.appendChild(devImg);
+
+                const visitLink = document.createElement('li');
+                visitLink.className = project.linkList;
+                projectFooter.appendChild(visitLink);
+
+                    const visitSite = document.createElement('a');
+                    visitSite.setAttribute("href",project.visitHref);
+                    visitSite.className = project.linkClass;
+                    visitSite.innerHTML = project.visit;
+                    visitLink.appendChild(visitSite);
+
+                const moreLink = document.createElement('li');
+                moreLink.className = project.linkList;
+                projectFooter.appendChild(moreLink);
+
+                    const moreDetails = document.createElement('a');
+                    moreDetails.setAttribute("href",project.moreHref);
+                    moreDetails.className = project.linkClass;
+                    moreDetails.innerHTML = project.more;
+                    moreLink.appendChild(moreDetails);
+        
+    });
+// }
+
 // Vannila JS Tilt Option
 
-VanillaTilt.init(document.querySelectorAll(".feature"), {
+VanillaTilt.init(document.querySelector("#custom-cards"), {
     max: 25,
     speed: 400
 });

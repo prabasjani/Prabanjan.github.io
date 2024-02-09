@@ -1,3 +1,13 @@
+// Home Page Greetings
+
+let time = document.getElementById('time');
+            
+    let date = new Date().getHours();
+
+    let greet = date < 12 ? "Good Morning" : date >=12 && date < 16 ? "Good Aternoon" : "Good Evening";
+
+    time.innerHTML = greet;
+
 // Background changing script
 
 const img = ['bg1.jpg','bg2.jpg','bg3.jpg','bg4.jpg','bg5.jpg','bg6.jpg'];

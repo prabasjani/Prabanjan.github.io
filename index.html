@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
     $greetings = [];
     $time = date("H:i");
@@ -12,7 +12,7 @@
     }
 
 ?>
-
+<?php echo $greetings;?> -->
 
 
 <!DOCTYPE html>
@@ -68,7 +68,7 @@
         <div class="container">
             <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg" id="hero">
               <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-                <h5 class="display-5 fw-bold lh-1 text-body-emphasis"><?php echo $greetings;?></h5>
+                <h5 class="display-5 fw-bold lh-1 text-body-emphasis" id="time"></h5>
                 <h1 class="display-3 fw-bold lh-1 text-body-emphasis">I'm PRABANJAN</h1>
                 <p class="display-6 fw-bold lh-1 text-body-emphasis">I'm a <span class="text-warning">Full Stack</span> Web Developer</p>
 
@@ -134,8 +134,27 @@
             <h2 class="pb-2 border-bottom display-5 fw-bold">Contact Me Anytime</h2>
 
             <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
-                <!-- contact form php file -->
-                <?php include "contactForm.php";?>
+                <div class="col" id="contact-form">
+                  <form method="post" action="">
+                      <div class="form-floating mb-3">
+                          <input type="text" class="form-control form-control-sm" name="fullname" id="contact-input" placeholder="fullname">
+                          <label for="contact-input">FullName</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                          <input type="email" class="form-control" name="email_address" id="contact-input" placeholder="email">
+                          <label for="contact-input">Email Address</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                          <input type="number" class="form-control" name="mobile_number" id="contact-input" placeholder="Number">
+                          <label for="contact-input">Mobile Number</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                          <textarea name="messages" style="height: 100px;resize: none;" class="form-control" placeholder="messages" id="contact-input"></textarea>
+                          <label for="contact-input">Type your Message here</label>
+                      </div>
+                      <button type="submit" class="btn btn-lg btn-primary" id="send-btn">Send Message</button>
+                  </form>
+                </div>
 
                 <div class="col">
                     <div class="row row-cols-1 row-cols-sm-2 g-4 contact-card">
@@ -146,12 +165,88 @@
         </div>
     </section>
    
-    
-    <!-- Background changing modal php file -->
-    <?php include "bgModal.php";?>
-   
-    <!-- Admin Login php file -->
-    <?php include "adminLogin.php";?>
+    <!-- background changing modal -->
+    <div class="modal fade" id="backgroundChange" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="backgroundChangeLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-3 text-dark" id="backgroundChangeLabel">Change the Background</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="card text-bg-dark d-inline-block me-2 mb-2" onclick="bgChange(0)" style="max-width: 125px;">
+                        <img src="bg1.jpg" class="card-img" alt="...">
+                        <div class="card-img-overlay">
+                            <p class="card-title text-light">Pink Sky</p>
+                        </div>
+                    </div>
+                    <div class="card text-bg-dark d-inline-block me-2 mb-2" onclick="bgChange(1)" style="width: 125px;">
+                        <img src="bg2.jpg"  class="card-img" alt="...">
+                        <div class="card-img-overlay">
+                            <p class="card-title text-light">Red Leaf</p>
+                        </div>
+                    </div>                    
+                    <div class="card text-bg-dark d-inline-block me-2 mb-2" onclick="bgChange(2)" style="width: 125px;">
+                        <img src="bg3.jpg" class="card-img" alt="...">
+                        <div class="card-img-overlay">
+                            <p class="card-title text-danger">Sky</p>
+                        </div>
+                    </div>
+                    <div class="card text-bg-dark d-inline-block me-2 mt-2" onclick="bgChange(3)" style="width: 125px;height: auto;">
+                        <img src="bg4.jpg" class="card-img" alt="...">
+                        <div class="card-img-overlay">
+                            <p class="card-title text-light">River</p>
+                        </div>
+                    </div>
+                    <div class="card text-bg-dark d-inline-block me-2 mt-2" onclick="bgChange(4)" style="width: 125px;">
+                        <img src="bg5.jpg" class="card-img" alt="...">
+                        <div class="card-img-overlay">
+                            <p class="card-title text-info">Gadgets</p>
+                        </div>
+                    </div>
+                    <div class="card text-bg-dark d-inline-block me-2 mt-2" onclick="bgChange(5)" style="width: 125px;">
+                        <img src="bg6.jpg" class="card-img" alt="...">
+                        <div class="card-img-overlay">
+                            <p class="card-title">Night</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <!-- <div class="modal fade" id="adminLogin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-3" id="staticBackdropLabel">Welcome Prabanjan</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" name="username" id="floatingInput" placeholder="username">
+                        <label for="floatingInput">Username</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <p class="text-start">This is Only for Admin...</p>
+                
+            </div>
+            </div>
+        </div>
+    </div> -->
 
     <!-- JS link -->
     <script src="script.js"></script>

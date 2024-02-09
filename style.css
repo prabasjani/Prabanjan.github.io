@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url('bg1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+}
+body::-webkit-scrollbar{
+  display: none;
+}
+section{
+    margin: 0;
+    padding: 6rem 8%;
+    min-height: 100vh;
+}
+#navbar{
+    background: rgba(255, 255, 255, 0.1)!important;
+    border: 1px solid transparent;
+    backdrop-filter: blur(10px);
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
+    border-bottom: rgba(255, 255, 255, 0.5);
+}
+
+#bg-card{
+    height: 500px;
+    width: 100px;
+    background-image: url('bg2.jpg');
+}
+#skill-card{
+    padding: 10px;
+    border-radius: 10px;
+    height: 200px;
+    width: 300px;
+}
+/* .contact-link{
+  padding: 10px;
+  border-radius: 10px;
+} */
+#contact-input{
+  background: transparent!important;
+}
+#hero,
+#skill-card,
+.contact-link,
+#contact-input,
+#project-card{
+    background: rgba(255, 255, 255, 0.1)!important;
+    border: 1px solid transparent;
+    backdrop-filter: blur(10px);
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5)!important;
+    border-top-color: rgba(255, 255, 255, 0.5)!important;
+    border-left-color: rgba(255, 255, 255, 0.5)!important;
+    border-bottom-color: rgba(255, 255, 255, 0.1)!important;
+    border-right-color: rgba(255, 255, 255, 0.1)!important;
+}
+
+
+
+/* Bootstrap custom styles */
+@media (min-width: 992px) {
+    .rounded-lg-3 { border-radius: .3rem; }
+  }
+  .feature-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: .75rem;
+  }
+  
+  .icon-square {
+    width: 3rem;
+    height: 3rem;
+    border-radius: .75rem;
+  }
+  
+  .text-shadow-1 { text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .25); }
+  .text-shadow-2 { text-shadow: 0 .25rem .5rem rgba(0, 0, 0, .25); }
+  .text-shadow-3 { text-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .25); }
+  
+  .card-cover {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  
+  .feature-icon-small {
+    width: 3rem;
+    height: 3rem;
+  }
+  

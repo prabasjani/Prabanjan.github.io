@@ -4,7 +4,7 @@ let time = document.getElementById('time');
             
     let date = new Date().getHours();
 
-    let greet = date < 12 ? "Good Morning" : date >=12 && date < 16 ? "Good Aternoon" : "Good Evening";
+    let greet = date < 12 ? "Good Morning..." : date >=12 && date < 16 ? "Good Afternoon..." : "Good Evening...";
 
     time.innerHTML = greet;
 
